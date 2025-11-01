@@ -1,0 +1,26 @@
+\documentclass[12pt, a4paper]{article}
+
+\input{settings} % alla inställningar för formatering, språk, referenser, mm. ska hör
+
+\begin{document}
+
+\pagenumbering{gobble} % avaktivera sidnumrering
+
+\input{titelsida}
+
+\clearpage\tableofcontents\clearpage
+
+\pagenumbering{arabic} % aktivera sidnumrering
+
+
+\section{Inledning}
+
+foo \cite{Chaudhari2005} bar \cite{westinghouse1971}
+
+
+
+
+
+\clearpage\printbibliography[heading=bibintoc]
+
+\end{document}
