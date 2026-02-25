@@ -118,3 +118,7 @@
   \addtocounter{footnote}{-1}%
   \endgroup
 }
+
+% automatically remove spaces before footnotes
+\let\oldfootnote\footnote
+\renewcommand{\footnote}{\unskip\oldfootnote}
