@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%
+% BASE PACKAGES %
+%%%%%%%%%%%%%%%%%
+
+\usepackage[
+    margin=1in,
+    headheight=15pt, % to supress headheight warnings
+]{geometry}
+\usepackage{parskip} % inserts space between paragraphs
+
+\ifswedish
+    \usepackage[main=swedish, english]{babel} % swedish is loaded but not used unless loading swedish.tex
+    \usepackage[iso,swedish]{isodate} % Switch to using the ISO date format
+\else
+    \usepackage[english]{babel} % swedish is loaded but not used unless loading swedish.tex
+    \usepackage[iso,english]{isodate}
+\fi
+
+\usepackage[
+	colorlinks, % colors the text of links instead of placing boxes around it
+	allcolors=magenta,
+    urlcolor=blue,
+	linktocpage,
+]{hyperref}
+\usepackage{csquotes} % useful for inline quotes via \enquote and is language-aware
+\usepackage{amsmath} % enhanced math environments like \pmatrix, \align, \dfrac, etc.
+\usepackage{amssymb} % specialized mathematical symbols
+\usepackage{cleveref} % intelligent cross-referencing via \cref and \Cref
+\usepackage{graphicx} % provides \includegraphics and \resizebox

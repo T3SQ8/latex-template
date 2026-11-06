@@ -1,0 +1,32 @@
+\begin{titlepage} \centering
+    \vspace*{\fill}
+
+    %\par\vspace*{0.125in}
+    {\Large \doctitle}
+
+    \coursename
+    
+    \vspace*{0.125in}
+    {\large \authors}
+
+    
+    \vspace*{0.125in}
+    \docdate
+
+    \ifshowimage
+        \vspace*{0.5in}
+        \includegraphics[width=0.5\textwidth]{\titleimage}
+    \fi
+    \ifshownote
+        \blfootnote{\titlenote}
+    \fi
+
+    \ifshowabstract
+        \vspace*{0.5in}
+        \begin{abstract} \noindent
+            \docabstract
+        \end{abstract}
+    \fi
+
+    \vspace*{\fill}
+\end{titlepage}

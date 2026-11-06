@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+% OTHER NICE PACKAGES %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% https://mirrors.ctan.org/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+% provides coloured and framed text boxes with optional headings
+% \begin{tcolorbox}[title=My heading line]
+%     Hello, World!
+% \end{tcolorbox}
+\usepackage{tcolorbox}
+
+% https://mirrors.ctan.org/macros/latex/contrib/diagbox/diagbox.pdf
+% adds the ability to split a tables cell diagonally in order to
+% label the row and column that the cell is in
+% \begin{tabular}{|l|ccc|}
+% \hline
+% \diagbox{Time}{Day} & Mon & Tue & Wed \\
+% \hline
+% Morning & used & used & \\
+% Afternoon & & used & used \\
+% \hline
+% \end{tabular}
+\usepackage{diagbox}
+
+% https://mirrors.ctan.org/macros/latex/contrib/adjustbox/adjustbox.pdf
+% provides the adjustbox environment which can shrink down
+% content if it exceeds the page width
+% \begin{adjustbox}{max width=\textwidth}
+%   \begin{tabular}{llllllll}
+%     ... very wide table ...
+%   \end{tabular}
+% \end{adjustbox}
+\usepackage{adjustbox}

@@ -1,0 +1,32 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ADD YOUR CUSTOM COMMANDS HERE %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% creates an unnumbered footnote
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% automatically remove spaces before footnotes
+\let\oldfootnote\footnote
+\renewcommand{\footnote}{\unskip\oldfootnote}
+
+% consistently use the same formatting for names of functions and files
+\newcommand{\filename}[1]{\texttt{#1}}
+\newcommand{\funcname}[1]{\texttt{#1}}
+
+\newcommand{\ode}{\funcname{ode45}}
+\newcommand{\SSE}{\filename{state\_space\_equations.m}}
+
+\ifswedish
+    % changes prefix when using \autoref{...}
+    \renewcommand{\figureautorefname}{figur}
+    \renewcommand{\tableautorefname}{tabell}
+    \renewcommand{\sectionautorefname}{avsnitt}
+    \renewcommand{\subsectionautorefname}{avsnitt}
+    \renewcommand{\appendixautorefname}{bilaga}
+\fi

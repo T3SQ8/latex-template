@@ -1,0 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD IF YOU NEED TO INCLUDE APPENDICES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+	title, % adds "Appendix" in title body
+	titletoc, % adds "Appendix" in TOC
+    % toc, % places a header "Appendices" in TOC
+    % page, % places a title before starting appendices
+]{appendix}
+
+
+\ifswedish
+    \providecommand{\appendixname}{Bilaga}
+    \renewcommand{\appendixtocname}{Bilagor}
+    \renewcommand{\appendixpagename}{Bilagor}
+\fi

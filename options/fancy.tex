@@ -1,0 +1,20 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CHANGE HEADERS AND FOOTERS USING FANCYHDR %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{%
+    \markright{\ifnum\value{section}>0 \thesection\quad\fi#1}}
+
+\fancyhead[L]{\footnotesize \textsc{\rightmark}}
+\fancyhead[R]{\footnotesize \doctitle}
+\fancyhead[C]{}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{\footnotesize \thepage}
+\fancyfoot[R]{}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}

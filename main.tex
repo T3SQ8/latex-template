@@ -1,26 +1,133 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[
+    12pt,
+    a4paper,
+    %draft, % enable while temporarly if compilation is slow
+]{article}
 
-\input{settings} % alla inställningar för formatering, språk, referenser, mm. ska hör
+\newcommand{\coursename}{ABC123 Advanced Something and Whatnot}
+\newcommand{\doctitle}{Assignment 1}
+\newcommand{\docdate}{\today}
+
+% KEEP THE PERCENT SIGNS!!!
+\newcommand{\authors}{%
+    Author 1 \par%
+    Author 2 \par%
+    Author 3%
+}
+
+
+\newif\ifswedish
+\newif\ifshowimage
+\newif\ifshownote
+\newif\ifshowabstract
+
+\swedishfalse % use \swedishtrue to change the language to swedish
+\showimagetrue % use \showimagefalse to disable titlepage image
+\shownotetrue % use \shownotefalse to disable titlepage footnote
+\showabstracttrue % use \showabstractfalse to disable the abstract
+
+\newcommand{\docabstract}{%
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+}
+
+\newcommand{\titleimage}{example-grid-100x100pt} 
+\newcommand{\titlenote}{Image by Firstname Lastname (C) License name}
+
+
+
+\input{options/base.tex}
+\input{options/colors.tex}
+\input{options/mathmatics.tex}
+\input{options/captions.tex}
+\input{options/code.tex}
+\input{options/fancy.tex}
+% \input{options/fonts.tex} % requires switching engines
+\input{options/references.tex}
+\input{options/appendix.tex}
+% \input{options/extras.tex}
+
 
 \begin{document}
 
-\pagenumbering{gobble} % avaktivera sidnumrering
+\isodate
+\input{options/commands.tex}
 
-\input{titelsida}
-
+\pagenumbering{gobble} % disable page numbering
+\input{titlepage} % or use \maketitle
 \clearpage\tableofcontents\clearpage
-
-\pagenumbering{arabic} % aktivera sidnumrering
-
-
-\section{Inledning}
-
-foo \cite{Chaudhari2005} bar \cite{westinghouse1971}
+\pagenumbering{arabic} % enable page numbering
 
 
+
+\section{Introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+
+\subsection{Random things}
+
+\begin{align}
+    f(x) &=
+    \begin{cases}
+        x^2,   & x \ge 0 \\
+        -x^2,  & x < 0
+    \end{cases} \label{eqn:first}  \\
+    f'(x) &=
+    \begin{cases}
+        2x,   & x > 0 \\
+        -2x,  & x < 0
+    \end{cases} \label{eqn:second}
+\end{align}
+
+Referencing \cref{eqn:first,eqn:second} using \texttt{cleveref}. Also here are some
+irrelevant citations \cite{einstein,dirac}. Also, note the example image in
+\cref{fig:myfigure}.
+
+\begin{figure}[htbp] \centering
+    \includegraphics[width=0.5\linewidth]{example-image}
+    \caption{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+    minim veniam, quis nostrud exercitation ullamco laboris nisi utaliquip ex
+    ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate
+    velit esse cillum dolore eu fugiat nullapariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id
+    est laborum.}
+    \label{fig:myfigure}
+\end{figure}
 
 
 
 \clearpage\printbibliography[heading=bibintoc]
+
+\clearpage
+\begin{appendices}
+
+
+\section{Code listing example}
+
+% or import from file: \lstinputlisting[language=Python]{script.py}
+\begin{lstlisting}[language=Python]
+def add(a, b):
+    # Return the sum of two numbers
+    result = a + b
+    return result
+
+print(add(3, 5))
+\end{lstlisting}
+
+
+\end{appendices}
 
 \end{document}
