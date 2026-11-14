@@ -1,27 +1,34 @@
 \begin{titlepage} \centering
     \vspace*{\fill}
 
-    %\par\vspace*{0.125in}
-    {\Large \doctitle}
+    \ifdefined\doctitle
+        {\Large \doctitle}
+    \fi
 
-    \coursename
+    \ifdefined\coursename
+        \coursename
+    \fi
     
-    \vspace*{0.125in}
-    {\large \authors}
+    \ifdefined\authors
+        \vspace*{0.125in}
+        {\large \authors}
+    \fi
 
     
-    \vspace*{0.125in}
-    \docdate
+    \ifdefined\docdate
+        \vspace*{0.125in}
+        \docdate
+    \fi
 
-    \ifshowimage
+    \ifdefined\titleimage
         \vspace*{0.5in}
         \includegraphics[width=0.5\textwidth]{\titleimage}
     \fi
-    \ifshownote
+    \ifdefined\titlenote
         \blfootnote{\titlenote}
     \fi
 
-    \ifshowabstract
+    \ifdefined\docabstract
         \vspace*{0.5in}
         \begin{abstract} \noindent
             \docabstract

@@ -38,12 +38,14 @@ latexmk -C
 
 ## Getting Started
 
-1. Edit the document metadata and sample text in `main.tex`. Update the course
-	name, title, date, author list, abstract, and title-page image/note as
-	appropriate.
-2. Set `\swedishtrue` to use Swedish, or leave `\swedishfalse` for English.
-3. Use the `\showimage`, `\shownote`, and `\showabstract` switches in
-	`main.tex` to enable or disable those title-page elements.
+1. Edit the document metadata in `metadata.tex`: the course name, title, date,
+	author list, abstract, and title-page image and note.
+2. Every metadata field is optional. Comment out a field's `\newcommand` to
+	hide it, or uncomment it to show it. The abstract, image, and note are
+	commented out by default. The title is also shown in the page header, and
+	the header is left blank when the title is removed.
+3. Set `\swedishtrue` in `main.tex` to use Swedish, or leave `\swedishfalse`
+	for English.
 4. Replace the example body, equations, figure, and appendix with your content.
 5. Replace the sample entries in `references.bib` with your own references.
 	Cite entries in the document with `\cite{key}`; the bibliography is printed
@@ -60,7 +62,8 @@ file.
 | File | Purpose |
 | --- | --- |
 | `main.tex` | Document settings, option loading, and sample report content |
-| `titlepage.tex` | Configurable title-page layout |
+| `metadata.tex` | Title, course, date, authors, abstract, and title-page image/note |
+| `titlepage.tex` | Title-page layout; shows only the metadata fields that are defined |
 | `references.bib` | Bibliography database (contains example references) |
 | `latexmkrc` | Selects pdfLaTeX and puts auxiliary files in `.build/` |
 | `options/base.tex` | Page layout and common packages |

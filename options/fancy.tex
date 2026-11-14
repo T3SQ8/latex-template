@@ -9,8 +9,12 @@
     \markright{\ifnum\value{section}>0 \thesection\quad\fi#1}}
 
 \fancyhead[L]{\footnotesize \textsc{\rightmark}}
-\fancyhead[R]{\footnotesize \doctitle}
 \fancyhead[C]{}
+\ifdefined\doctitle
+    \fancyhead[R]{\footnotesize \doctitle}
+\else
+    \fancyhead[R]{}
+\fi
 
 \fancyfoot[L]{}
 \fancyfoot[C]{\footnotesize \thepage}
