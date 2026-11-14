@@ -7,4 +7,15 @@
     style=ieee,
 ]{biblatex}
 \addbibresource{references.bib}
+
+% Redefine the "bibintoc" heading used by \printbibliography[heading=bibintoc].
+% The default sets the header mark in uppercase ("REFERENCES"). This version
+% keeps the original case, so the header shows "References" in small caps like
+% the section titles. It still adds an unnumbered entry to the table of
+% contents.
+\defbibheading{bibintoc}[\refname]{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+    \markright{#1}%
+}
 \usepackage{xurl} % Breaks long URLs

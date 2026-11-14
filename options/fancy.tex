@@ -5,13 +5,41 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
+% Set the text shown in the left header (\rightmark) for each section. LaTeX
+% calls \sectionmark{<title>} at every \section. fancyhdr's default puts "1
+% TITLE" (uppercase) in \leftmark and leaves \rightmark empty; this version
+% puts "1  Title" (number, a \quad space, then the title in its original case)
+% in \rightmark. If the section counter is 0, which happens when numbering is
+% turned off with \setcounter{secnumdepth}{0}, only the title is shown. Starred
+% sections (\section*) never call \sectionmark, so they leave the header
+% unchanged.
 \renewcommand{\sectionmark}[1]{%
-    \markright{\ifnum\value{section}>0 \thesection\quad\fi#1}}
+    \markright{\ifnum\value{section}>0 \thesection\quad\fi#1}%
+}
+
+% Keep \tableofcontents and \listoffigures from uppercasing their header
+% marks, so the header shows "Contents" / "List of Figures" in small caps
+% like the section titles, instead of "CONTENTS" / "LIST OF FIGURES".
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{%
+    \begingroup
+        \let\MakeUppercase\relax
+        \oldtableofcontents
+    \endgroup
+}
+
+\let\oldlistoffigures\listoffigures
+\renewcommand{\listoffigures}{%
+    \begingroup
+        \let\MakeUppercase\relax
+        \oldlistoffigures
+    \endgroup
+}
 
 \fancyhead[L]{\footnotesize \textsc{\rightmark}}
 \fancyhead[C]{}
 \ifdefined\doctitle
-    \fancyhead[R]{\footnotesize \doctitle}
+    \fancyhead[R]{\footnotesize \textsc{\doctitle}}
 \else
     \fancyhead[R]{}
 \fi
