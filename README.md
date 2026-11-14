@@ -68,7 +68,7 @@ file.
 | `latexmkrc` | Selects pdfLaTeX and puts auxiliary files in `.build/` |
 | `options/base.tex` | Page layout and common packages |
 | `options/colors.tex` | Color definitions |
-| `options/mathmatics.tex` | Math and units support |
+| `options/mathematics.tex` | Math and units support |
 | `options/captions.tex` | Caption formatting |
 | `options/code.tex` | Source-code listing style |
 | `options/fancy.tex` | Headers and footers |

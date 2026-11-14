@@ -1,19 +1,20 @@
 \documentclass[
     12pt,
     a4paper,
-    %draft, % enable while temporarly if compilation is slow
+    %draft, % enable temporarily if compilation is slow
 ]{article}
 
 \newif\ifswedish
-\swedishfalse % use \swedishtrue to change the language to swedish
+\swedishfalse % use \swedishtrue to change the language to Swedish
 
+% \setcounter{secnumdepth}{0} % disable section numbering
 
 \input{metadata.tex} % Change title, date, authors, etc.
 
 
 \input{options/base.tex}
 \input{options/colors.tex}
-\input{options/mathmatics.tex}
+\input{options/mathematics.tex}
 \input{options/captions.tex}
 \input{options/code.tex}
 \input{options/fancy.tex}
@@ -23,15 +24,17 @@
 % \input{options/extras.tex}
 
 
+\pagenumbering{roman}
 \begin{document}
 
-\isodate
 \input{options/commands.tex}
 
-\pagenumbering{gobble} % disable page numbering
 \input{titlepage} % or use \maketitle
-\clearpage\tableofcontents\clearpage
-\pagenumbering{arabic} % enable page numbering
+\setcounter{page}{2} % avoids duplicate page warning
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
 
 
 
