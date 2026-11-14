@@ -11,10 +11,10 @@
 \newcommand{\doctitle}{Assignment 1}
 \newcommand{\docdate}{\today}
 
-% KEEP THE PERCENT SIGNS!!!
+% Keep the percent signs and do not add a space before \par
 \newcommand{\authors}{%
-    Author 1 \par%
-    Author 2 \par%
+    Author 1\par%
+    Author 2\par%
     Author 3%
 }
 
@@ -31,3 +31,12 @@
 % \newcommand{\titleimage}{example-grid-100x100pt}
 
 % \newcommand{\titlenote}{Image by Firstname Lastname (C) License name}
+
+
+% Set up the file metadata from the information given above.
+\AtBeginDocument{%
+    \pdfstringdefDisableCommands{\def\par{, }}% format author names properly
+    \ifdefined\doctitle   \hypersetup{pdftitle={\doctitle}}\fi
+    \ifdefined\authors    \hypersetup{pdfauthor={\authors}}\fi
+    \ifdefined\coursename \hypersetup{pdfsubject={\coursename}}\fi
+}
