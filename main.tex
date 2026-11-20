@@ -8,6 +8,7 @@
 \swedishfalse % use \swedishtrue to change the language to Swedish
 
 % \setcounter{secnumdepth}{0} % disable section numbering
+% \setcounter{tocdepth}{1} % exclude subsections from toc
 
 \input{metadata.tex} % Change title, date, authors, etc.
 
@@ -21,19 +22,20 @@
 % \input{options/fonts.tex} % requires switching engines
 \input{options/references.tex}
 \input{options/appendix.tex}
+% \input{options/sections.tex}
 % \input{options/extras.tex}
 
 
-\pagenumbering{roman}
 \begin{document}
 
 \input{options/commands.tex}
 
+\pagenumbering{roman}
 \input{titlepage} % or use \maketitle
 \setcounter{page}{2} % avoids duplicate page warning
-\tableofcontents
-\clearpage
+\tableofcontents\clearpage
 \pagenumbering{arabic}
+
 
 
 
